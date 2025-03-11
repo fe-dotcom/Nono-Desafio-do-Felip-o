@@ -14,7 +14,7 @@ let charactersCharacteristics={
 function chooseCharactersCharacteristics(charactersCharacteristics){
     for(let index in charactersCharacteristics.type){
         let [charactersType, charactersWeapons]= charactersCharacteristics.type[index]
-        console.log(`O ${charactersType},chamado de ${charactersCharacteristics.name} atacou ${charactersWeapons}`)
+        console.log(`O ${charactersType},chamado de ${charactersCharacteristics.name} usou ${charactersWeapons}`)
     }
 }
 
@@ -26,7 +26,7 @@ chooseCharactersCharacteristics(charactersCharacteristics)
 
 
 
-// Segunda solução, usando classes objetos e JSON para tornar a aplicação mais automática:
+// Segunda solução, usando classes objetos:
 
 class caracteristicasDosPersonagens{
 
@@ -36,9 +36,32 @@ class caracteristicasDosPersonagens{
         this.ataque = ataque
     }
 
-    escreverCaracteristicasDosPersonagens(){
-        console.log(`O ${this.tipo},chamado de ${this.nome} atacou ${this.ataque}`)
+    escrever(){
+        console.log(`O ${this.tipo},chamado de ${this.nome} usou ${this.ataque}`)
     }
+
 }
 
-let guerreiro= caracteristicasDosPersonagens.escreverCaracteristicasDosPersonagens("Felipe, o destruidor", "guerreiro", "usou espada")
+let guerreiro= new caracteristicasDosPersonagens("Felipe, o destruidor", "Guerreiro", "usou a espada")
+
+
+let monge= new caracteristicasDosPersonagens("Felipe, o destruidor", "Monge", "usou artes marciais")
+
+
+let mago= new caracteristicasDosPersonagens("Felipe, o destruidor", "Mago", "usou magia")
+
+
+let ninja= new caracteristicasDosPersonagens("Felipe, o destruidor", "ninja", "usou shurikens")
+
+
+for(let i=0; i>-1; i++){
+guerreiro.escrever()
+
+monge.escrever()
+
+
+mago.escrever()
+
+ninja.escrever()
+
+}
